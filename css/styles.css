@@ -185,12 +185,12 @@ a {
 }
 
 .btn--primary {
-  background: var(--color-primary);
+  background: var(--color-headings);
   color: #fff;
 }
 
 .btn--primary:hover {
-  background: #3a8ffd;
+  background: #020f20;
 }
 
 .btn--secondary {
@@ -358,4 +358,20 @@ a {
   .plan__description {
     font-size: 1.7rem;
   }
+}
+/* Media */
+.media {
+  display: flex;
+}
+
+.media__title {
+  margin-top: 0;
+}
+
+.media__body {
+  margin: 0 2rem;
+}
+
+.media__image {
+  margin-top: 1rem;
 }
