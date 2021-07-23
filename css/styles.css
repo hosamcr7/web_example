@@ -234,7 +234,10 @@ a {
   width: 100%;
   display: inline-block;
 }
-
+.btn--stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
 @media screen and (min-width: 1024px) {
   .btn {
     font-size: 1.5rem;
@@ -430,39 +433,29 @@ a {
 }
 @media screen and (min-width: 1024px) {
   .quote {
-    font-size: 1.8rem;
-  }
-  .quote__author {
-    font-size: 2rem;
-  }
-  .quote__organization {
-    font-size: 1.6rem;
-  }
-}
-@media screen and (min-width: 1300px) {
-  .quote {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .quote__author {
     font-size: 2.2rem;
   }
   .quote__organization {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
+
 /* Grids */
 .grid {
   display: grid;
 }
 
 @media screen and (min-width: 768px) {
-  .grid {
+  .grid--1x2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .grid {
+  .grid--1x3 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -503,5 +496,47 @@ a {
   .testimonial .quote {
     margin-left: 6rem;
     margin-right: 0;
+  }
+}
+
+/* Callouts */
+.callout {
+  padding: 4rem;
+  border-radius: 5px;
+}
+
+.callout--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.callout__heading {
+  color: #fff;
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.callout .btn {
+  justify-self: center;
+  align-self: center;
+}
+
+.callout__content {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .callout .grid--1x2 {
+    grid-template-columns: 1fr auto;
+  }
+
+  .callout__content {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .callout .btn {
+    justify-self: start;
+    margin: 0 2rem;
   }
 }
