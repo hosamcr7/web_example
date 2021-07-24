@@ -199,7 +199,7 @@ a {
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
-  padding: 2rem 3rem;
+  padding: 2vh 6vw;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -289,6 +289,7 @@ a {
 /*input-group*/
 .input-group {
   display: flex;
+
   border: 1px solid #ccc;
   border-radius: 30px;
 }
@@ -299,21 +300,40 @@ a {
   margin-left: 1rem;
   margin-right: 1rem;
   padding: 1.5rem 1rem;
+  width: 0;
 }
 
 .input-group .btn {
+  display: flex;
+  align-items: center;
+
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
   font-size: 1.5rem;
 }
-
+.input-group p {
+  margin: 0;
+}
 @media screen and (min-width: 1024px) {
   .input {
     font-size: 1.5rem;
   }
 }
-
+@media screen and (max-width: 500px) {
+  .input-group .btn--accent > p {
+    display: none;
+  }
+  .input-group .icon--white {
+    margin: 0;
+  }
+  .input-group .input {
+    padding: 0;
+  }
+  .input-group .btn {
+    padding: 1rem;
+  }
+}
 /* Cards */
 .card {
   border-radius: 7px;
@@ -326,9 +346,6 @@ a {
 .card__body {
   padding: 2rem 3rem;
 }
-
-
-
 
 .card--primary .card__header {
   background: var(--color-primary);
@@ -528,11 +545,11 @@ a {
   margin: 0 3rem;
 }
 
-.testimonial__image>img {
+.testimonial__image > img {
   width: 100%;
 }
 
-.testimonial__image>.icon-container {
+.testimonial__image > .icon-container {
   position: absolute;
   top: 3rem;
   right: -32px;
@@ -692,12 +709,12 @@ a {
   border-bottom: 1px solid #222;
 }
 
-.nav__item>a {
+.nav__item > a {
   color: #d2d0db;
   transition: color 0.3s;
 }
 
-.nav__item>a:hover {
+.nav__item > a:hover {
   color: #fff;
 }
 
@@ -772,7 +789,7 @@ a {
 
 .block-domain__prices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -788,7 +805,9 @@ a {
 }
 
 /*Plans block*/
-
+.block-plans {
+  max-width: 1400px;
+}
 .block-plans .grid {
   gap: 8rem 4rem;
 }
@@ -796,4 +815,153 @@ a {
 .block-plans .card {
   max-width: 500px;
   margin: 0 auto;
+}
+
+.block-plans .plan {
+  margin: 3rem 2rem;
+}
+
+/* Features */
+.feature {
+  gap: 4rem 2rem;
+  margin: 4rem auto;
+}
+
+.feature:first-of-type {
+  margin-top: 6rem;
+}
+.feature__content .icon--primary {
+  position: relative;
+  color: #000;
+  bottom: -8px;
+  margin-right: 3px;
+}
+.feature__heading {
+  margin: 2rem 0;
+
+  display: inline-block;
+}
+
+.feature__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
+}
+/*showcase*/
+
+.show_case {
+  padding-top: 8rem;
+}
+.show_case--body {
+  margin-top: 5rem;
+}
+.show_case--data {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+
+  margin-left: 2rem;
+}
+.show_case--data .media__title {
+  color: #fff;
+  font-size: 1.7rem;
+}
+.show_case--data .media__body {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.show_case .hero__image {
+  transition: transform 0.3s;
+  margin-bottom: 3rem;
+}
+.show_case .hero__image:hover {
+  transform: scale(1.1);
+}
+/* Footer */
+.footer {
+  background: #141313;
+}
+
+.footer a {
+  color: #777;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #3f3d3d;
+}
+
+.footer__section .list {
+  margin: 0;
+}
+.footer_list > li {
+  margin-bottom: 0.7rem;
+}
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__brand img {
+  /* TODO: Consider refactoring this and applying it to 
+  all images. */
+  width: 100%;
+  max-width: 230px;
+}
+
+.footer__copyright {
+  font-size: 2.1rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .footer .collapsible__chevron {
+    display: none;
+  }
+
+  .footer .collapsible__content {
+    opacity: 1;
+    max-height: 100%;
+  }
+
+  .footer__brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+
+  .footer__section {
+    border: 0;
+  }
+
+  .footer__heading {
+    font-size: 1.6rem;
+  }
 }
